@@ -45,3 +45,20 @@ Swal.fire({
       });
     }
   });
+
+  //Timer
+  let timerInterval;
+Swal.fire({
+  title: "¡Muchas gracias!",
+  html: "Esta fué una práctica de Git",
+  timer: 2000,
+  timerProgressBar: true,
+  willClose: () => {
+    clearInterval(timerInterval);
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("Se cerró la alerta");
+  }
+});
